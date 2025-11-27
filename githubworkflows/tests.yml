@@ -13,20 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      # Step 4: Run tests with coverage
       - name: Run tests
         run: pytest --cov=./ --cov-report=xml
 
+      # Step 5: Upload coverage report artifact
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
