@@ -99,6 +99,9 @@ clear.place(x=195, y=110)
 
 AC_btn = Button(root, height=2, width=5, text='AC', font=9, bg='Red', command=lambda: entry_strvar.set(''))
 AC_btn.place(x=5, y=110)
+square = Button(root, height=2, width=5, text='x²', font=9, bg='Green',
+                command=lambda: add_text('**2', entry_strvar))
+square.place(x=125, y=395)
 
 # Ok Button
 ok_btn = Button(root, height=2, width=22, text='Ok', font=9, bg='CadetBlue', command=lambda: root.destroy())
